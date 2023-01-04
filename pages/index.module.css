@@ -1,0 +1,9 @@
+.background {
+  background-color: rgb(102, 102, 250);
+  height: 100vh;
+  width: 100vw;
+}
+.body {
+  margin: auto;
+  width: 1000px;
+}
