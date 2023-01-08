@@ -7,11 +7,11 @@ interface InterfacePokemon {
 }
 
 const Card = ({ pokemonData }: InterfacePokemon) => {
-  const { id, name, image } = pokemonData;
+  const { id, name, img } = pokemonData;
   return (
     <div className={styled.Card}>
       <picture>
-        <img className={styled.img} src={image} />
+        <img className={styled.img} src={img} />
       </picture>
       <p className={styled.titleName} >{name.toUpperCase()}</p>
       <p className={styled.titleId} >{id}</p>

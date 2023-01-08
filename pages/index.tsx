@@ -1,28 +1,23 @@
 import Card from "src/components/Card";
 
 import styled from "@/pages/index.module.css";
+import { consumeApi } from "hooks/consumeAPi";
 
 export type TypePokemon = {
   id: string,
   name: string,
-  image: string,
+  img: string,
 };
 
-const pokemonList: TypePokemon[] = [
-  {
-    id: '001',
-    name: 'bulbasaur',
-    image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png'
-  },
-];
-
 const Home = () => {
+  const { data: pokemonList } = consumeApi<TypePokemon[]>('https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json');
+  
   return (
     <div className={styled.background}>
       <main className={styled.body}>
         {
-          pokemonList.map((pokemon)=>{
-            return <Card pokemonData={pokemon}/>
+          pokemonList?.map((pokemon)=>{
+            return <Card key={pokemon.id} pokemonData={pokemon}/>
           })
         }
       </main>

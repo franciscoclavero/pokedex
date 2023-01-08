@@ -6,7 +6,7 @@ const pokemonList: TypePokemon[] = [
   {
     id: '002',
     name: 'Ivysaur',
-    image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png'
+    img: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png'
   },
 ];   
 
@@ -27,7 +27,7 @@ describe("Card Component", () => {
     const { container } = render(<Card pokemonData={pokemonList[0]} />);
 
     const cardNotes = container.getElementsByClassName('Card');
-    const ivisaurNote = screen.getByText('IVYSAUR');
+    const ivisaurNote = screen.getByText(pokemonList[0].name.toUpperCase());
 
     expect(cardNotes.length).toBe(1);
     expect(ivisaurNote).toBeInTheDocument();
@@ -39,7 +39,7 @@ describe("Card Component", () => {
     const idNotes = container.getElementsByClassName('titleId');
 
     expect(idNotes.length).toBe(1);
-    expect(idNotes[0].textContent).toBe('002');
+    expect(idNotes[0].textContent).toBe(pokemonList[0].id);
   });
 
   it("Check render image", () => {
@@ -47,6 +47,6 @@ describe("Card Component", () => {
 
     const idNotes = container.getElementsByClassName('img');
 
-    expect(idNotes[0].getAttribute('src')).toBe('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png');
+    expect(idNotes[0].getAttribute('src')).toBe(pokemonList[0].img);
   });
 });
