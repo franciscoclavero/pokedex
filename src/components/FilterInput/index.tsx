@@ -6,7 +6,7 @@ interface InterfaceFilter {
   onChange: ChangeEventHandler<HTMLInputElement> | undefined;
 }
 
-const Filter = ({ value, onChange }: InterfaceFilter) => {
+const FilterInput = ({ value, onChange }: InterfaceFilter) => {
   return (
     <div className={styled.body}>
       <div className={styled.filter}>
@@ -16,4 +16,4 @@ const Filter = ({ value, onChange }: InterfaceFilter) => {
   )
 };
 
-export default Filter;
+export default FilterInput;
