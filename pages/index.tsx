@@ -19,7 +19,7 @@ const Home = () => {
 
   const pokemonListFiltered = pokemonList?.filter((pokemon) => {
     return pokemon.name.toLowerCase().indexOf(filtered.toLowerCase()) > -1;
-  });
+  }) || [];
 
   return (
     <div className={styled.background}>
