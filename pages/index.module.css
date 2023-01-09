@@ -2,10 +2,14 @@
   background-color: rgb(102, 102, 250);
   height: 100%;
   width: 100%;
+  padding: 1px;
 }
 .body {
   margin: auto;
   width: 1050px;
+}
+.cardList {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
 }
