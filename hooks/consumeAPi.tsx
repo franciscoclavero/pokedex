@@ -2,7 +2,7 @@ import axios, { AxiosRequestConfig } from "axios";
 import { useEffect, useState } from "react";
 
 export function consumeApi<T = unknown>(url: string, options?: AxiosRequestConfig) {
-  const [ data, setData ] = useState<T | null>(null);
+  const [ data, setData ] = useState<T | []>([]);
   const [ isFetching, setIsFetching] = useState(true);
   const [ error, setError] = useState<Error | null>(null);
 

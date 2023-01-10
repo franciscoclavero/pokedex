@@ -1,10 +1,12 @@
+import { useState } from "react";
 import Card from "src/components/Card";
+import FilterInput from "src/components/FilterInput";
+import InfinityScroll from "src/components/InfinityScroll";
+
+import { consumeApi } from "hooks/consumeAPi";
+import getFilterArray from "../src/components/functions/filterArray";
 
 import styled from "@/pages/index.module.css";
-import { consumeApi } from "hooks/consumeAPi";
-import FilterInput from "src/components/FilterInput";
-import { useState } from "react";
-import InfinityScroll from "src/components/InfinityScroll";
 
 export type TypePokemon = {
   id: string,
@@ -17,9 +19,7 @@ const Home = () => {
   const [ filtered, setFiltered ] = useState('');
   const [renderAmount, setRenderAmount] = useState(14);
 
-  const pokemonListFiltered = pokemonList?.filter((pokemon) => {
-    return pokemon.name.toLowerCase().indexOf(filtered.toLowerCase()) > -1;
-  }) || [];
+  const pokemonListFiltered = getFilterArray(pokemonList, filtered);
 
   return (
     <div className={styled.background}>
