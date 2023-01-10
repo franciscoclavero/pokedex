@@ -1,10 +1,14 @@
 .Card {
   background-color: #fafafa;
+  cursor: pointer;
   height: 285px;
+  margin: 5px;
   padding: 5px;
   position: relative;
   width: 200px;
-  margin: 5px;
+}
+.Card:hover {
+  background-color: #a7a7a7;
 }
 .img {
   margin: 5px;

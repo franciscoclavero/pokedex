@@ -1,8 +1,8 @@
 .background {
   background-color: rgb(102, 102, 250);
-  height: 100%;
-  width: 100%;
+  min-height: 100vh;
   padding: 1px;
+  width: 100%;
 }
 .body {
   margin: auto;
