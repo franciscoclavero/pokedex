@@ -1,6 +1,6 @@
-import { TypePokemon } from "@/pages/index";
 import { render, screen } from "@testing-library/react";
 import Card from ".";
+import { TypePokemon } from "../CardList";
 
 const pokemonList: TypePokemon[] = [
   {

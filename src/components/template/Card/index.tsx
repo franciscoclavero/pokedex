@@ -1,4 +1,4 @@
-import { TypePokemon } from "@/pages/index";
+import { TypePokemon } from "../CardList";
 
 import styled from "./index.module.css";
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Card from "../Card";
-import InfinityScroll from "src/components/InfinityScroll";
+import InfinityScroll from "../../InfinityScroll";
 
 import styled from "./index.module.css";
 
